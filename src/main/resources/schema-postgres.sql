@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS kontakts;
-CREATE TABLE kontakts(id serial PRIMARY KEY,
+DROP TABLE IF EXISTS kontakt;
+CREATE TABLE kontakt(id serial PRIMARY KEY,
                       name VARCHAR(100),
                       phone_number VARCHAR(100),
-                      email VARCHAR(100),
+                      email_address VARCHAR(100),
                       address_line_one VARCHAR(100),
                       address_line_two VARCHAR(100),
                       state VARCHAR(100),
