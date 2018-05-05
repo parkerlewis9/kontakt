@@ -1,4 +1,4 @@
-package com.kontakts.kontakt;
+package com.kontakt.kontakt;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,15 @@
-package com.kontakts.kontakt;
+package com.kontakt.bean;
 
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "kontakt")
 public class Kontakt {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String name;
 
@@ -14,8 +23,9 @@ public class Kontakt {
     private String country;
     private String zipcode;
 
-    public Kontakt(String name, String phoneNumber, String emailAddress, String addressLineOne,
+    public Kontakt(Long id, String name, String phoneNumber, String emailAddress, String addressLineOne,
                    String addressLineTwo, String state, String country, String zipcode) {
+        this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.emailAddress = emailAddress;
@@ -27,6 +37,14 @@ public class Kontakt {
     }
 
     public Kontakt() {}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
