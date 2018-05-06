@@ -15,6 +15,7 @@ public class KontaktController {
     @Autowired
     KontaktRepository repository;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/api/kontakts", method = RequestMethod.GET)
     public ResponseEntity<List<Kontakt>> allKontakts() {
         List<Kontakt> kontakts = repository.findAllByOrderByNameAsc();
@@ -22,6 +23,7 @@ public class KontaktController {
         return new ResponseEntity<>(kontakts, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/api/kontakts/{id}", method = RequestMethod.GET)
     public ResponseEntity showKontakt(@PathVariable("id") String id) {
         Kontakt kontakt;
@@ -35,6 +37,7 @@ public class KontaktController {
         return new ResponseEntity<>(kontakt, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/api/kontakts", method = RequestMethod.POST)
     public ResponseEntity createKontakt(@RequestBody Kontakt kontakt) {
 
@@ -47,6 +50,7 @@ public class KontaktController {
         return new ResponseEntity<>(kontakt, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/api/kontakts/{id}", method = RequestMethod.PUT)
     public ResponseEntity updateKontakt(@PathVariable("id") String id, @RequestBody Kontakt kontakt) {
 
@@ -64,6 +68,7 @@ public class KontaktController {
         return new ResponseEntity<>(kontakt, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/api/kontakts/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<String> deleteKontakt(@PathVariable("id") String id) {
 
