@@ -1,5 +1,4 @@
-DROP TABLE IF EXISTS kontakt;
-CREATE TABLE kontakt(id serial PRIMARY KEY,
+CREATE TABLE kontakt( id serial PRIMARY KEY,
                       name VARCHAR(100),
                       phone_number VARCHAR(100),
                       email_address VARCHAR(100),
@@ -8,3 +7,5 @@ CREATE TABLE kontakt(id serial PRIMARY KEY,
                       state VARCHAR(100),
                       country VARCHAR(100),
                       zipcode VARCHAR(100));
+
+CREATE SEQUENCE hibernate_sequence START 1; 
